@@ -256,6 +256,130 @@ body {
   gap: 40px;
   align-items: center;
 }
+
+/* ===== History Section Compact ===== */
+.history-compact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: stretch;
+}
+
+.history-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.history-intro {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--dark);
+  font-weight: 500;
+  text-align: justify;
+}
+
+.history-box {
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.05) 0%, rgba(212, 175, 55, 0.05) 100%);
+  padding: 20px;
+  border-left: 5px solid var(--secondary);
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.history-box h3 {
+  color: var(--primary);
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.history-box p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--dark);
+  text-align: justify;
+}
+
+.features-compact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.feature-item {
+  background: var(--secondary);
+  color: var(--primary);
+  padding: 12px 16px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.feature-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(212, 175, 55, 0.3);
+}
+
+.history-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+}
+
+.image-frame {
+  position: relative;
+  padding: 15px;
+  background: linear-gradient(135deg, var(--secondary) 0%, rgba(212, 175, 55, 0.2) 100%);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.image-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  max-height: 380px;
+  object-fit: cover;
+}
+
+.cta-compact {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--white);
+  padding: 25px 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(139, 0, 0, 0.2);
+}
+
+.cta-compact p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+
+.cta-compact p:first-child {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.ceremony-dates {
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  color: var(--secondary);
+  margin: 12px 0 8px 0 !important;
+}
+
+.ceremony-location {
+  font-size: 0.9rem !important;
+  opacity: 0.95;
+}
 .features-list {
   list-style: none;
   margin-top: 20px;
@@ -1938,6 +2062,92 @@ body {
   .btn {
     padding: 10px 25px;
     font-size: 0.95rem;
+  }
+}
+
+/* ===== Responsive History Section ===== */
+@media (max-width: 992px) {
+  .history-compact {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  
+  .history-right {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .history-left {
+    gap: 15px;
+  }
+  
+  .history-intro {
+    font-size: 0.95rem;
+  }
+  
+  .history-box {
+    padding: 18px;
+  }
+  
+  .history-box h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .history-box p {
+    font-size: 0.9rem;
+  }
+  
+  .features-compact {
+    gap: 10px;
+  }
+  
+  .feature-item {
+    font-size: 0.85rem;
+    padding: 10px 14px;
+  }
+  
+  .image-frame {
+    padding: 12px;
+  }
+  
+  .image-frame img {
+    max-height: 300px;
+  }
+  
+  .cta-compact {
+    padding: 20px 18px;
+  }
+  
+  .ceremony-dates {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-compact {
+    grid-template-columns: 1fr;
+  }
+  
+  .feature-item {
+    font-size: 0.8rem;
+  }
+  
+  .image-frame img {
+    max-height: 250px;
+  }
+  
+  .cta-compact {
+    padding: 18px 15px;
+  }
+  
+  .cta-compact p:first-child {
+    font-size: 1rem;
+  }
+  
+  .ceremony-dates {
+    font-size: 1.1rem !important;
   }
 }
 

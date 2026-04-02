@@ -1,4 +1,4 @@
-# 🚀 Deployment Guide - Sri Gangamma Temple Website
+# 🚀 Deployment Guide - Bhairavakona Gangamma Thalli Temple Website
 
 ## Part 1: Upload Project to GitHub
 
@@ -8,7 +8,7 @@
 2. Click the **+** icon in the top-right corner and select **New repository**
 3. Fill in the repository details:
    - **Repository name**: `gangamma-temple-website`
-   - **Description**: "Official website of Sri Gangamma Temple - Temple inauguration ceremonies and donation portal"
+   - **Description**: "Official website of Bhairavakona Gangamma Thalli Temple - Temple inauguration ceremonies and donation portal"
    - **Visibility**: Select **Public** (so anyone can view it)
    - **Initialize repository**: Leave unchecked (we'll push existing code)
 4. Click **Create repository**
