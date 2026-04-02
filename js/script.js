@@ -1,8 +1,71 @@
 // ===== Sri Gangamma Temple - JavaScript =====
 
+// ===== Carousel Functions =====
+let currentSlideIndex = 0;
+const slideDuration = 5000; // 5 seconds per slide
+let slideTimer = null;
+
+function showSlide(index) {
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.dot');
+  
+  if (!slides.length) return;
+  
+  if (index >= slides.length) {
+    currentSlideIndex = 0;
+  } else if (index < 0) {
+    currentSlideIndex = slides.length - 1;
+  } else {
+    currentSlideIndex = index;
+  }
+  
+  // Hide all slides
+  slides.forEach(slide => {
+    slide.classList.remove('active');
+  });
+  
+  // Remove active class from all dots
+  dots.forEach(dot => {
+    dot.classList.remove('active');
+  });
+  
+  // Show current slide
+  if (slides[currentSlideIndex]) {
+    slides[currentSlideIndex].classList.add('active');
+  }
+  
+  // Highlight current dot
+  if (dots[currentSlideIndex]) {
+    dots[currentSlideIndex].classList.add('active');
+  }
+  
+  // Reset timer for auto-play
+  resetSlideTimer();
+}
+
+function moveSlide(direction) {
+  showSlide(currentSlideIndex + direction);
+}
+
+function currentSlide(index) {
+  showSlide(index);
+}
+
+function resetSlideTimer() {
+  if (slideTimer) {
+    clearTimeout(slideTimer);
+  }
+  slideTimer = setTimeout(() => {
+    moveSlide(1);
+  }, slideDuration);
+}
+
 // Set current year in footer
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('year').textContent = new Date().getFullYear();
+  
+  // Initialize carousel
+  showSlide(0);
   
   // Mobile Navigation Toggle
   const navToggle = document.querySelector('.nav-toggle');
